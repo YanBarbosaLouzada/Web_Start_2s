@@ -1,0 +1,32 @@
+.anime-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+/* Estilos para a caixa de pesquisa */
+.search-box {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-input {
+    width: 250px;
+    padding: 10px;
+    border: 1px solid #1900ff;
+    border-radius: 5px;  
+    font-size: 14px;
+}
+
+.search-icon {
+    border-radius: 5px;
+    width: 100px;
+    padding: 8px;
+    background-color: #2174cc;
+}

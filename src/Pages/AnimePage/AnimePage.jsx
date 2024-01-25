@@ -1,26 +1,26 @@
 import { useEffect, useState } from "react"
 import React from 'react'
-import { useApiAnimeData } from "../../hooks/getAPIData";
-import AnimeCard from "../AnimeCard/AnimeCard.jsx";
-import '../AnimeComponent/AnimeComponent.css'
-import Popup from '../Popup/Popup.jsx'
+import { useApiAnimeData } from "../../hooks/getAPIData.jsx";
+import AnimeCard from "../../components/AnimeCard/AnimeCard.jsx";
+import Popup from '../../components/Popup/Popup.jsx'
+import './AnimePage.css'
 
-function AnimeComponent() {
+function AnimePage() {
   const [animeName, setAnimeName] = useState("One Punch Man");
   const [animeDigitado, setAnimeDigitado] = useState("One Punch Man");
   const { animeData, loading, error } = useApiAnimeData(animeName);
   // lidando com popup
-  const [popupContent, setPopupContent] = useState({message:'', color:''})
-  const [showPopup, setShowPopup]= useState(false);
+  const [popupContent, setPopupContent] = useState({ message: '', color: '' })
+  const [showPopup, setShowPopup] = useState(false);
 
   //criando a função que chama o popup
 
-  function showAndHidePopup(message,color) {
-    setPopupContent({message, color}); //vamos descobrir depois qual vai ser o contexto do popup
+  function showAndHidePopup(message, color) {
+    setPopupContent({ message, color }); //vamos descobrir depois qual vai ser o contexto do popup
     setShowPopup(true);
-    setTimeout(()=>{
+    setTimeout(() => {
       setShowPopup(false);
-    },3500)
+    }, 3500)
   }
 
   useEffect(() => {
@@ -31,7 +31,7 @@ function AnimeComponent() {
         showAndHidePopup('Animes coletados com sucesso', 'success');
       }
     }
-  }, [loading, error,animeData]);
+  }, [loading, error, animeData]);
 
 
   const handleInputChange = (e) => {
@@ -66,11 +66,11 @@ function AnimeComponent() {
         </div>
       ) : (animeData && <div> Sem Nenhum anime </div>)}
       {
-        showPopup ? <Popup message={popupContent.message} color={popupContent.color}/>:null
+        showPopup ? <Popup message={popupContent.message} color={popupContent.color} /> : null
         // showPopup = true ? <mostre o popup> ou nao mostre nada se ele for falso
       }
     </div>
   );
 }
 
-export default AnimeComponent;
+export default AnimePage;

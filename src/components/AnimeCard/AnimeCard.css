@@ -37,6 +37,7 @@
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     flex: 1;
+    background-color: aliceblue;
     /* Ocupa o espaço disponível restante */
 }
 

@@ -1,13 +1,10 @@
 import React from 'react'
-import AnimeComponent from './components/AnimeComponent/AnimeComponent';
 import './App.css';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './router';
 function App() {
     return (
-        <div>
-            <AnimeComponent></AnimeComponent>
-           
-        </div>
-
+        <RouterProvider router={router}/>
     )
 }
 
