@@ -15,6 +15,7 @@ function Navbar() {
                     <Link to="/animes">Animes</Link>
                     <Link to="/contact">Contato</Link>
                     <Link to="/favorito">Favorito</Link>
+                    <Link to="/notes">Notes</Link>
                 </div>
             </nav>
 
