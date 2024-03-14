@@ -1,18 +1,14 @@
 
-.home {
-  background: url('https://i.pinimg.com/736x/b0/0e/35/b00e35bd06e1db3cd0d1a3ad84815e8e.jpg') center center/cover no-repeat;
-  height: 90vh;
+.home{
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: white;
+  
 }
-
 .overlay {
-  background: rgba(0, 0, 0, 0.5);
-  width: 100%;
-  height: 100%;
+ 
+ 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,7 +19,9 @@
   padding: 20px;
   border-radius: 10px;
   max-width: 800px;
-  text-align: justify; /* Alinha o texto à esquerda dentro do card */
+  text-align: left; /* Alinha o texto à esquerda dentro do card */
+  color: white;
+  margin: 40px;
 }
 
 h1 {
