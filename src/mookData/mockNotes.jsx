@@ -3,21 +3,21 @@ import { generateAtualDate } from "../helpers/generateAtualDate";
 
 export const mockNotes = [ // criando dados estaticos
   {
-    title: "one piece é demais",
-    description: "pirata que estica",
+    title: "Site de Animes",
+    description: "Feito para animes",
     id: "1",
     date: generateAtualDate(),
   },
   {
-    title: "tomates",
-    description: "melhor fruta ever",
+    title: "Testando Nota",
+    description: "Lorem Lorem",
     id: "2",
     date: generateAtualDate(),
   },
   {
-    title: "Volei",
-    description: "é o melhor esporte",
-    id: "2",
+    title: "Testando Nota",
+    description: "Lorem Lorem",
+    id: "3",
     date: generateAtualDate(),
   },
 ];

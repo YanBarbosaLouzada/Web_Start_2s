@@ -1,5 +1,5 @@
 .notesPageContainer{
     display: flex;
-    height: 81vh;
+    flex-wrap: nowrap;
 }
 

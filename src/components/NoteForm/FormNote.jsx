@@ -1,14 +1,27 @@
-import React, { useContext, useState } from "react";
+import React, { useContext} from "react";
 import "./FormNote.css";
-import {NotesContext} from '../../context/notesContext/NotesContext'
+import { NotesContext } from '../../context/notesContext/NotesContext'
 
 export function FormNote() { // componente montando o formulario das notas
-    const [noteCreated, setNoteCreated] = useState({ title: "", description: "" });
-    const {addNote} = useContext(NotesContext);
 
-    const SendNote = (e) =>{
+    //Agora o FormNote.jsx vai utilizar as funções do contexto pra criar o note, repare
+    //que ele agora checa se está editando ou não para poder trocar o texto do botão:
+    const { addNote, note, setNote, isEditing, setEditing, idEdit, setIdEdit, editnote } = useContext(NotesContext);
+
+
+
+
+    const SendNote = (e) => {
         e.preventDefault();
-        addNote(noteCreated.title,noteCreated.description)
+        if (isEditing) {
+            editnote(idEdit);
+        } else {
+            addNote(note.title, note.description);
+        }
+        setEditing(false);
+        setIdEdit("");
+        setNote({title:"",description:""});
+
     }
 
     return (
@@ -21,9 +34,9 @@ export function FormNote() { // componente montando o formulario das notas
                 <input
                     type="text"
                     className="margin-form"
-                    value={noteCreated.title}
-                    onChange={(e) =>
-                        setNoteCreated({ ...noteCreated, title: e.target.value })
+                    value={note.title} // muda aq aula 24
+                    onChange={(e) =>     // muda aq aula 24
+                        setNote({...note, title: e.target.value }) // muda aq aula 24
                     }
                     id="titleNote"
                     placeholder="Título"
@@ -35,15 +48,15 @@ export function FormNote() { // componente montando o formulario das notas
                 <input
                     type="text"
                     className="margin-form"
-                    value={noteCreated.description}
+                    value={note.description} // muda aq aula 24
                     onChange={(e) =>
-                        setNoteCreated({ ...noteCreated, description: e.target.value })
+                        setNote({ ...note, description: e.target.value }) // muda aq aula 24
                     }
                     id="descriptionNote"
                     placeholder="Descrição"
                 />
                 <button type="submit" id="buttonForm" className="margin-form" >
-                    Salvar Anotação
+                   {isEditing ? "Editar Anotação" : "Adicionar anotação"}
                 </button>
             </form>
         </aside>
