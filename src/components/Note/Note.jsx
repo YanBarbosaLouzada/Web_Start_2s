@@ -20,8 +20,8 @@ export function Note({ title, description, date, id }) { // componente falando s
       <h1>{title}</h1>
       <span>{description}</span>
       <div className="Buttons">
-        <div className="edit" onClick={() => SubmitToEdit()}><img src={pincel} width={15}/></div>
-        <div className="delete" onClick={() => deleteNote(id)}><img src={lixo} width={15} /></div>
+        <div className="edit" onClick={() => SubmitToEdit()}><img src={pincel} width={15} alt=""/></div>
+        <div className="delete" onClick={() => deleteNote(id)}><img src={lixo} width={15} alt=""/></div>
       </div>
       <div>{date}</div>
     </div>

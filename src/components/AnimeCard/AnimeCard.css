@@ -8,6 +8,7 @@
     flex-direction: column;
     border-radius: 10px;
     box-shadow: 1px 5px 5px black;
+    
 }
 
 .card-title {
@@ -38,6 +39,7 @@
     -webkit-box-orient: vertical;
     flex: 1;
     background-color: aliceblue;
+    overflow-y: scroll;
     /* Ocupa o espaço disponível restante */
 }
 

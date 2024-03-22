@@ -5,6 +5,7 @@ import HomePage from "./Pages/HomePage/HomePage";
 import ErrorPage from "./Pages/ErrorPage/ErrorPage";
 import Favorito from "./Pages/FavPage/Favorito";
 import NotePage from "./Pages/NotesPage/NotePage"
+import LoginPage from "./Pages/LoginPage/LoginPage";
 
 
 export const router = createBrowserRouter([
@@ -23,6 +24,10 @@ export const router = createBrowserRouter([
             {
                 path: "/notes",
                 element:<NotePage/>
+            },
+            {
+                path: "/login",
+                element:<LoginPage/>
             },
             {
                 path:"favorito",
